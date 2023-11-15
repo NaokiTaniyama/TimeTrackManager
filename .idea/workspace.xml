@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="81c813a7-3e28-4354-81e6-837dfd4cfc54" name="変更" comment="">
-      <change beforePath="$PROJECT_DIR$/TimeTrackManager/src/main/java/com/example/TimeTrackManager/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TimeTrackManager/src/main/java/com/example/TimeTrackManager/MainController.java" afterDir="false" />
+    <list default="true" id="81c813a7-3e28-4354-81e6-837dfd4cfc54" name="変更" comment="追加出来ていないファイルがあったので、intellijから追加">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +22,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "last_opened_file_path": "C:/Users/freed/OneDrive/デスクトップ/授業ノートまとめ三年生/システム開発/TimeTrackManager"
@@ -36,6 +37,14 @@
       <option name="presentableId" value="Default" />
       <updated>1699952465230</updated>
     </task>
+    <task id="LOCAL-00001" summary="追加出来ていないファイルがあったので、intellijから追加">
+      <created>1700011836393</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1700011836393</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -48,5 +57,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="追加出来ていないファイルがあったので、intellijから追加" />
+    <option name="LAST_COMMIT_MESSAGE" value="追加出来ていないファイルがあったので、intellijから追加" />
   </component>
 </project>
