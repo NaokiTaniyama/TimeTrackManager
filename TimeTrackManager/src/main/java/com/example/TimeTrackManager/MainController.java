@@ -12,7 +12,7 @@ public class MainController {
 
     @GetMapping("/login")
     public String index(Model model){
-        model.addAttribute("name", "変数の受け渡し成功(marge test)");
+        model.addAttribute("name", "変数の受け渡し成功(リモートブランチテスト)");
         return "login";
     }
 
