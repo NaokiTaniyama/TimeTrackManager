@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>勤怠入力画面</title>
+</head>
+<body>
+<ul>
+    <form th:action="@{/AttendanceInputForm}" method="post">
+        <li><button type="submit">勤怠入力</button></li>
+    </form>
+    <form th:action="@{/LocationInputForm}" method="post">
+        <li><button type="submit">勤務場所登録</button></li>
+    </form>
+    <form th:action="@{/ContactInputForm}" method="post">
+        <li><button type="submit">連絡先登録</button></li>
+    </form>
+    <form th:action="@{/AttendanceStatusListView}" method="post">
+        <li><button type="submit">勤怠状況一覧表示</button></li>
+    </form>
+
+</ul>
+<p th:text="${index}">
+</body>
+</html>
