@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/TimeTrackManager.iml" filepath="$PROJECT_DIR$/.idea/TimeTrackManager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TimeTrackManager/TimeTrackManager.iml" filepath="$PROJECT_DIR$/TimeTrackManager/TimeTrackManager.iml" />
     </modules>
   </component>
 </project>
