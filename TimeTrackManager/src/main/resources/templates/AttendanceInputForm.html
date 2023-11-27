@@ -20,6 +20,11 @@
   </form>
 
 </ul>
-<p th:text="${index}">
+<p th:text="${index}"><br>
+<p th:text="${start}">
+<form th:action="@{/startWork}" method="post">
+  <button type="submit">出勤</button>
+</form>
+  <button type="submit">退勤</button>
 </body>
 </html>
