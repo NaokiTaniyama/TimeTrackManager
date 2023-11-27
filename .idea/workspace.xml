@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="81c813a7-3e28-4354-81e6-837dfd4cfc54" name="変更" comment="追加出来ていないファイルがあったので、intellijから追加" />
+    <list default="true" id="81c813a7-3e28-4354-81e6-837dfd4cfc54" name="変更" comment="追加出来ていないファイルがあったので、intellijから追加">
+      <change afterPath="$PROJECT_DIR$/TimeTrackManager/src/main/java/com/example/TimeTrackManager/SqlController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TimeTrackManager/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/TimeTrackManager/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TimeTrackManager/src/main/resources/templates/AttendanceInputForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/TimeTrackManager/src/main/resources/templates/AttendanceInputForm.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +19,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -31,6 +37,9 @@
     </option>
   </component>
   <component name="ProjectId" id="2Y9zDlb89X27VfRiztmJRKk8TZK" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
