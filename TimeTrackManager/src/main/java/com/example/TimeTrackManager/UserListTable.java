@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class TimeTrackManagerTable {
+public class UserListTable {
     private int id;
     private String username;
     private String password;
