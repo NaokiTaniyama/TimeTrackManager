@@ -18,13 +18,15 @@
   <form th:action="@{/AttendanceStatusListView}" method="post">
     <li><button type="submit">勤怠状況一覧表示</button></li>
   </form>
-
 </ul>
 <p th:text="${index}"><br>
 <p th:text="${start}">
 <form th:action="@{/startWork}" method="post">
   <button type="submit">出勤</button>
 </form>
+<form th:action="@{/endWork}" method="post">
   <button type="submit">退勤</button>
+</form>
+
 </body>
 </html>
