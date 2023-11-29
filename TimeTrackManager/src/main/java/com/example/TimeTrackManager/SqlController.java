@@ -44,9 +44,21 @@ public class SqlController {
 
     @PostMapping("/endWork")
     public String endWork(Model model){
+        //本来はログイン画面から持ってくる
         int user_id = 1;
-        jdbcTemplate.update("UPDATE time_track_manager SET work_status = 0 WHERE id = " + user_id);
-        model.addAttribute("start", "退勤成功");
+        String view_1 = "SELECT * from time_track_manager";
+        String view_2 = "SELECT * from attendance_list";
+        Map<String, Object> result = jdbcTemplate.queryForMap("SELECT * from time_track_manager WHERE id = " + user_id);
+        int work_status = (int)result.get("work_status");
+        if (work_status != 0){
+            //退勤処理
+            String attendanceSql = "UPDATE attendance_list SET checkout_time = CURRENT_TIMESTAMP WHERE list_id = " + work_status;
+            jdbcTemplate.update(attendanceSql);
+            jdbcTemplate.update("UPDATE time_track_manager SET work_status = 0 WHERE id = " + user_id);
+            model.addAttribute("start", "退勤成功");
+        }else{
+            model.addAttribute("start", "まずは出勤してください");
+        }
         return "AttendanceInputForm";
     }
 }
