@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81c813a7-3e28-4354-81e6-837dfd4cfc54" name="変更" comment="追加出来ていないファイルがあったので、intellijから追加">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_30.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TimeTrackManager/src/main/java/com/example/TimeTrackManager/AttendanceListRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TimeTrackManager/src/main/java/com/example/TimeTrackManager/AttendanceListTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TimeTrackManager/src/main/java/com/example/TimeTrackManager/TimeTrackManagerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TimeTrackManager/src/main/java/com/example/TimeTrackManager/TimeTrackManagerTable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TimeTrackManager/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TimeTrackManager/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TimeTrackManager/src/main/java/com/example/TimeTrackManager/SqlController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TimeTrackManager/src/main/java/com/example/TimeTrackManager/SqlController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
