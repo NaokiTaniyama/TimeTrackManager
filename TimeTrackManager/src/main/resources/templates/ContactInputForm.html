@@ -2,10 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>勤怠入力画面</title>
+    <link th:href="@{/style/cssandjs/ContactInputForm.css}"rel="stylesheet">
+    <title>連絡先登録画面</title>
 </head>
 <body>
-<ul>
+<ul id="menu">
     <form th:action="@{/AttendanceInputForm}" method="post">
         <li><button type="submit">勤怠入力</button></li>
     </form>
@@ -18,8 +19,18 @@
     <form th:action="@{/AttendanceStatusListView}" method="post">
         <li><button type="submit">勤怠状況一覧表示</button></li>
     </form>
-
 </ul>
-<p th:text="${index}">
+
+<div class="from">
+<h1>連絡先登録</h1>
+<form class="input-from">
+    <p>電話番号<input type="tel" placeholder="000-0000-0000"/></p>
+    <p>メールアドレス<input type="email" placeholder="**********@*****"/></p>
+    <p>備考<input type="text" size="30" placeholder="備考を入力してください"/></p>
+</form>
+    <form th:action="@{/AttendanceInputForm}" method="post">
+        <button type="submit" class="register">登録</button>
+    </form>
+</div>
 </body>
 </html>

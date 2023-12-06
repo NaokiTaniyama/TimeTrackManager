@@ -2,10 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
+  <link th:href="@{/style/cssandjs/AttendanceInputForm.css}"rel="stylesheet">
   <title>勤怠入力画面</title>
 </head>
 <body>
-<ul>
+<ul id="menu">
   <form th:action="@{/AttendanceInputForm}" method="post">
     <li><button type="submit">勤怠入力</button></li>
   </form>
