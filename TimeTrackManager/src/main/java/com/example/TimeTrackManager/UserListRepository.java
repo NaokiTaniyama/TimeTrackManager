@@ -1,13 +1,17 @@
 package com.example.TimeTrackManager;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class TimeTrackManagerRepository {
+import static java.sql.Types.NULL;
+import static javax.swing.UIManager.get;
+
+public class UserListRepository {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -30,5 +34,20 @@ public class TimeTrackManagerRepository {
             list.add(userListTable);
         }
         return list;
+    }
+
+    public boolean loginCheck(String password, String username){
+        System.out.println(password);
+        System.out.println(username);
+        try {
+        String sql = "SELECT id FROM user_list WHERE username = '" + username + "' AND password = '"
+                + password + "'";
+            Map<String, Object> result = jdbcTemplate.queryForMap(sql);
+            int id = (int)result.get("id");
+            return true;
+        }catch (IncorrectResultSizeDataAccessException e){
+            return false;
+        }
+
     }
 }
