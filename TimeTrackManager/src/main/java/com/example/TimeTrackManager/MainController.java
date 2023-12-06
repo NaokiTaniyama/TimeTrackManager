@@ -46,6 +46,9 @@ public class MainController {
             int id = (int)result.get("id");
             if (id != NULL){
                 model.addAttribute("index", "勤怠入力画面への遷移成功");
+                session.setAttribute("username",username);
+                session.setAttribute("password",password);
+                session.setAttribute("id",id);
                 return "AttendanceInputForm";
             }else {
                 throw new IncorrectResultSizeDataAccessException(0);

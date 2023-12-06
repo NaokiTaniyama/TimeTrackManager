@@ -1,5 +1,6 @@
 package com.example.TimeTrackManager;
 
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
@@ -14,17 +15,18 @@ public class SqlController {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+    @Autowired
+    HttpSession session;
+
     @PostMapping("/startWork")
     public String startWork(Model model){
         //本来はログイン画面から持ってくる
-        int user_id = 1;
-        String view_1 = "SELECT * from user_list";
-        String view_2 = "SELECT * from attendance_list";
+        int user_id = (int)session.getAttribute("id");
         Map<String, Object> result = jdbcTemplate.queryForMap("SELECT * from user_list WHERE id = " + user_id);
         int work_status = (int)result.get("work_status");
         //リストに追加
-        String attendanceSql = "INSERT INTO attendance_list (list_id, checkin_time) VALUES ((SELECT count(*) + 1 FROM attendance_list), CURRENT_TIMESTAMP)";
-        //新規作成したリストのidをそのまま変数へ挿入
+        String attendanceSql = "INSERT INTO attendance_list (list_id, user_id, checkin_time) VALUES ((SELECT count(*) + 1 FROM attendance_list), " + user_id + ", CURRENT_TIMESTAMP)";
+        //新規作成したリストのuser_idをそのまま変数へ代入
         String listIdSql = "SELECT * FROM attendance_list WHERE list_id = (SELECT count(*) FROM attendance_list)";
         if (work_status == 0){
             jdbcTemplate.update(attendanceSql);
@@ -36,16 +38,13 @@ public class SqlController {
         }else{
             model.addAttribute("start", "すでに出勤済みです");
         }
-
-        System.out.println(jdbcTemplate.queryForList(view_1));
-        System.out.println(jdbcTemplate.queryForList(view_2));
         return "AttendanceInputForm";
     }
 
     @PostMapping("/endWork")
     public String endWork(Model model){
         //本来はログイン画面から持ってくる
-        int user_id = 1;
+        int user_id = (int)session.getAttribute("id");
         String view_1 = "SELECT * from user_list";
         String view_2 = "SELECT * from attendance_list";
         Map<String, Object> result = jdbcTemplate.queryForMap("SELECT * from user_list WHERE id = " + user_id);
