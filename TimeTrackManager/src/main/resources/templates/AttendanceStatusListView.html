@@ -2,12 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <link th:href="@{/style/cssandjs/AttendanceStatusListForm.css]"rel="stylesheet">
+  <link th:href="@{/style/cssandjs/AttendanceStatusListView.css}"rel="stylesheet">
   <title>勤怠状況一覧画面</title>
 </head>
 <body>
 <ul id="menu">
-  <form th:action="@{/AttendanceInputForm}" method="post">
+  <form th:action="@{/AttendanceInputFormNoParam}" method="post">
     <li><button type="submit">勤怠入力</button></li>
   </form>
   <form th:action="@{/LocationInputForm}" method="post">
@@ -21,17 +21,29 @@
   </form>
 
 </ul>
-<<<<<<< HEAD
 <h2>勤怠状況一覧</h2>
-<table border="1" style="border-collapse:collapse">
-  <tr><th>氏名</th><th>勤務開始時間</th><th>勤務終了時間</th><th>ステータス</th><th>勤務場所</th></tr>
-  <tr><th>名無し1</th><th>9:00</th><th>18:00</th><th>出勤中</th><th>自宅</th></tr>
-  <tr><th>名無し2</th><th>9:00</th><th>15:00</th><th>未出勤</th><th>---</th></tr>
+<table border="1">
+  <tr>
+    <th>氏名</th>
+    <th>勤務開始時間</th>
+    <th>勤務終了時間</th>
+    <th>ステータス</th>
+    <th>勤務場所</th>
+  </tr>
+  <tr>
+    <td>名無し1</td>
+    <td>9:00</td>
+    <td>18:00</td>
+    <td>出勤中</td>
+    <td>自宅</td>
+  </tr>
+  <tr>
+    <td>名無し2</td>
+    <td>9:00</td>
+    <td>15:00</td>
+    <td>未出勤</td>
+    <td>---</td>
+  </tr>
 </table>
-=======
-<p th:text="${index}">
-
-
->>>>>>> taniyama
 </body>
 </html>
