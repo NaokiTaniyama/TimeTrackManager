@@ -34,11 +34,11 @@ public class MainController {
         return "login";
     }
 
-
-    @PostMapping("/AttendanceInputForm")
+    @PostMapping("/AttendanceInputFormNoParam")
     //後にログイン画面から値を受け取る処理を追加
-    public String AttendanceForm(Model model, @RequestParam("username") String username,
-                                 @RequestParam("password") String password) {
+    public String AttendanceFormNoParam(Model model) {
+        String username = (String)session.getAttribute("username");
+        String password = (String)session.getAttribute("password");
         try{
             String sql = "SELECT id FROM user_list WHERE username = '" + username + "' AND password = '" + password + "'";
             Map<String, Object> result = jdbcTemplate.queryForMap(sql);
@@ -73,6 +73,30 @@ public class MainController {
     public String AttendanceView(Model model){
         model.addAttribute("index", "勤怠状況一覧表示画面への遷移成功");
         return "AttendanceStatusListView";
+    }
+
+    @PostMapping("/AttendanceInputForm")
+    public String AttendanceForm(Model model, @RequestParam("username") String username,
+                                 @RequestParam("password") String password) {
+        try{
+            String sql = "SELECT id FROM user_list WHERE username = '" + username + "' AND password = '" + password + "'";
+            Map<String, Object> result = jdbcTemplate.queryForMap(sql);
+
+            int id = (int)result.get("id");
+            if (id != NULL){
+                model.addAttribute("index", "勤怠入力画面への遷移成功");
+                session.setAttribute("username",username);
+                session.setAttribute("password",password);
+                session.setAttribute("id",id);
+                return "AttendanceInputForm";
+            }else {
+                throw new IncorrectResultSizeDataAccessException(0);
+            }
+        }catch (IncorrectResultSizeDataAccessException e){
+            model.addAttribute("index", "ユーザー名かパスワードが間違っています");
+            return "login";
+        }
+
     }
 
 }
