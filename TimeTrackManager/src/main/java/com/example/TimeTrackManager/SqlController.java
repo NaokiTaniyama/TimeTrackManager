@@ -20,7 +20,6 @@ public class SqlController {
 
     @PostMapping("/startWork")
     public String startWork(Model model){
-        //本来はログイン画面から持ってくる
         int user_id = (int)session.getAttribute("id");
         Map<String, Object> result = jdbcTemplate.queryForMap("SELECT * from user_list WHERE id = " + user_id);
         int work_status = (int)result.get("work_status");
@@ -43,7 +42,6 @@ public class SqlController {
 
     @PostMapping("/endWork")
     public String endWork(Model model){
-        //本来はログイン画面から持ってくる
         int user_id = (int)session.getAttribute("id");
         String view_1 = "SELECT * from user_list";
         String view_2 = "SELECT * from attendance_list";

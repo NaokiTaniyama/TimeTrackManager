@@ -20,6 +20,7 @@ import static java.sql.Types.NULL;
 @Controller
 public class MainController {
 
+
     @Autowired
     HttpSession session;
 
@@ -85,6 +86,7 @@ public class MainController {
             int id = (int)result.get("id");
             if (id != NULL){
                 model.addAttribute("index", "勤怠入力画面への遷移成功");
+                model.addAttribute("name", "こんにちは、" +  username + "さん。");
                 session.setAttribute("username",username);
                 session.setAttribute("password",password);
                 session.setAttribute("id",id);
