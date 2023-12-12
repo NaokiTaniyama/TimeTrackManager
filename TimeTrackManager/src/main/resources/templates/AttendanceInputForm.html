@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <link th:href="@{/style/cssandjs/AttendanceInputForm.css}" rel="stylesheet">
-  <script type="text/javascript" th:src="@{/style/cssandjs/AttendanceInputForm.js}"></script>
   <title>勤怠入力画面</title>
 </head>
 <body>
@@ -21,9 +20,9 @@
     <li><button type="submit">勤怠状況一覧表示</button></li>
   </form>
 </ul>
-<p th:text="${index}"><br>
 <p th:text="${start}">
-<p id="currentTime"></p>
+<p id="monthAndDayTime"></p>
+<h1 id="currentTime"></h1>
 <p th:text="${name}">
 <form th:action="@{/startWork}" method="post">
   <button type="submit">出勤</button>
@@ -31,6 +30,10 @@
 <form th:action="@{/endWork}" method="post">
   <button type="submit">退勤</button>
 </form>
+<form th:action="@{/logout}" method="post">
+  <button type="submit">ログアウト</button>
+</form>
 
+<script type="text/javascript" th:src="@{/style/cssandjs/AttendanceInputForm.js}"></script>
 </body>
 </html>
