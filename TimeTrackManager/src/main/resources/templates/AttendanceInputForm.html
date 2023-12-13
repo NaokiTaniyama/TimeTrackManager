@@ -30,14 +30,28 @@
   <p id="monthAndDayTime"></p>
   <h1 id="currentTime"></h1>
   <p th:text="${name}">
-  <div class="button-form">
-    <form th:action="@{/startWork}" method="post">
-      <button type="submit" class="start-b">出勤</button>
-    </form>
-    <form th:action="@{/endWork}" method="post">
-      <button type="submit" class="end-b">退勤</button>
-    </form>
-  </div>
+  <table class="button-form">
+    <tr>
+      <td>
+        <form th:action="@{/startWork}" method="post">
+          <button type="submit" class="start-b">出勤</button>
+        </form>
+      </td>
+      <td>
+        <form th:action="@{/endWork}" method="post">
+          <button type="submit" class="end-b">退勤</button>
+        </form>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button type="submit" class="pause">休憩開始</button>
+      </td>
+      <td>
+        <button type="submit" class="pause">休憩終了</button>
+      </td>
+    </tr>
+  </table>
 </div>
 <script type="text/javascript" th:src="@{/style/cssandjs/AttendanceInputForm.js}"></script>
 </body>
