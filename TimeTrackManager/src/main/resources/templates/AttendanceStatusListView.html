@@ -6,23 +6,25 @@
   <title>勤怠状況一覧画面</title>
 </head>
 <body>
-<ul id="menu">
+<nav>
+<ul class="menu">
   <form th:action="@{/AttendanceInputFormNoParam}" method="post">
-    <li><button type="submit">勤怠入力</button></li>
+    <li><button type="submit"class="menu-b">勤怠入力</button></li>
   </form>
   <form th:action="@{/LocationInputForm}" method="post">
-    <li><button type="submit">勤務場所登録</button></li>
+    <li><button type="submit"class="menu-b">勤務場所登録</button></li>
   </form>
   <form th:action="@{/ContactInputForm}" method="post">
-    <li><button type="submit">連絡先登録</button></li>
+    <li><button type="submit"class="menu-b">連絡先登録</button></li>
   </form>
   <form th:action="@{/AttendanceStatusListView}" method="post">
-    <li><button type="submit">勤怠状況一覧</button></li>
+    <li><button type="submit"class="menu-b">勤怠状況一覧</button></li>
   </form>
-
 </ul>
+</nav>
+<div class="form">
 <h2>勤怠状況一覧</h2>
-<table border="1">
+<table border="1" class="status">
   <tr>
     <th>氏名</th>
     <th>勤務開始時間</th>
@@ -45,5 +47,6 @@
     <td>---</td>
   </tr>
 </table>
+</div>
 </body>
 </html>

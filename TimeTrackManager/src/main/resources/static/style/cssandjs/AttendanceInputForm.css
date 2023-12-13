@@ -2,3 +2,8 @@
 list-style: none;
 display: flex;
 }
+
+button{
+width:200px;
+padding:20px;
+}
