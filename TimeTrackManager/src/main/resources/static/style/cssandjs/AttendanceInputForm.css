@@ -24,26 +24,60 @@ nav{
     text-align: center;
     margin: 0;
     padding: 100px;
-}.button-form input:first-of-type{
-    margin-right: 50px;
 }
 .button-form{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 .start-b{
-    width: 100px;
-    padding: 30px;
+    width: 140px;
+    padding: 40px;
     background-color: forestgreen;
     margin: auto;
     color: #ffff;
     border: none;
+    border-radius: 10px;
+    font-size:x-large;
+    display: inline-block;
+    transition: .3s;
+    box-shadow: 0 2px 0 #333;
 }
+.start-b:hover{
+    transform: translateY(5px);
+    box-shadow: 0 0 0 #333;
+}
+
 .end-b{
-    width: 100px;
-    padding: 30px;
+    width: 140px;
+    padding: 40px;
     background-color:red;
     margin: auto;
     color: #ffff;
     border: none;
+    border-radius: 10px;
+    font-size:x-large;
+    display: inline-block;
+    transition: .3s;
+    box-shadow: 0 2px 0 #333;
+}
+.end-b:hover{
+    transform: translateY(5px);
+    box-shadow: 0 0 0 #333;
+}
+.pause{
+    width: 140px;
+    padding: 30px;
+    background-color:darkblue;
+    margin: auto;
+    color: #ffff;
+    border: none;
+    border-radius: 10px;
+    font-size:small;
+    display: inline-block;
+    transition: .3s;
+    box-shadow: 0 2px 0 #00ffff;
+}
+.pause:hover{
+    transform: translateY(5px);
+    box-shadow: 0 0 0 #333;
 }
