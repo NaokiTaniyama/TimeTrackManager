@@ -20,6 +20,7 @@ import static java.sql.Types.NULL;
 @Controller
 public class MainController {
 
+
     @Autowired
     HttpSession session;
 
@@ -34,6 +35,12 @@ public class MainController {
         return "login";
     }
 
+    @PostMapping("/logout")
+    public String logout(Model model){
+        session.invalidate();
+        return "logout";
+    }
+
     @PostMapping("/AttendanceInputFormNoParam")
     //後にログイン画面から値を受け取る処理を追加
     public String AttendanceFormNoParam(Model model) {
@@ -45,7 +52,7 @@ public class MainController {
 
             int id = (int)result.get("id");
             if (id != NULL){
-                model.addAttribute("index", "勤怠入力画面への遷移成功");
+                model.addAttribute("name", "こんにちは、" +  username + "さん。");
                 return "AttendanceInputForm";
             }else {
                 throw new IncorrectResultSizeDataAccessException(0);
@@ -84,7 +91,7 @@ public class MainController {
 
             int id = (int)result.get("id");
             if (id != NULL){
-                model.addAttribute("index", "勤怠入力画面への遷移成功");
+                model.addAttribute("name", "こんにちは、" +  username + "さん。");
                 session.setAttribute("username",username);
                 session.setAttribute("password",password);
                 session.setAttribute("id",id);
