@@ -6,34 +6,39 @@
   <title>勤怠入力画面</title>
 </head>
 <body>
-<ul id="menu">
-  <form th:action="@{/AttendanceInputFormNoParam}" method="post">
-    <li><button type="submit">勤怠入力</button></li>
-  </form>
-  <form th:action="@{/LocationInputForm}" method="post">
-    <li><button type="submit">勤務場所登録</button></li>
-  </form>
-  <form th:action="@{/ContactInputForm}" method="post">
-    <li><button type="submit">連絡先登録</button></li>
-  </form>
-  <form th:action="@{/AttendanceStatusListView}" method="post">
-    <li><button type="submit">勤怠状況一覧表示</button></li>
-  </form>
-</ul>
-<p th:text="${start}">
-<p id="monthAndDayTime"></p>
-<h1 id="currentTime"></h1>
-<p th:text="${name}">
-<form th:action="@{/startWork}" method="post">
-  <button type="submit">出勤</button>
-</form>
-<form th:action="@{/endWork}" method="post">
-  <button type="submit">退勤</button>
-</form>
-<form th:action="@{/logout}" method="post">
-  <button type="submit">ログアウト</button>
-</form>
-
+<nav>
+  <ul class="menu">
+    <form th:action="@{/AttendanceInputFormNoParam}" method="post">
+      <li><button type="submit" class="menu-b">勤怠入力</button></li>
+    </form>
+    <form th:action="@{/LocationInputForm}" method="post">
+      <li><button type="submit" class="menu-b">勤務場所登録</button></li>
+    </form>
+    <form th:action="@{/ContactInputForm}" method="post">
+      <li><button type="submit" class="menu-b">連絡先登録</button></li>
+    </form>
+    <form th:action="@{/AttendanceStatusListView}" method="post">
+      <li><button type="submit"class="menu-b">勤怠状況一覧</button></li>
+    </form>
+    <form th:action="@{/logout}" method="post">
+      <button type="submit" class="menu-b">ログアウト</button>
+    </form>
+  </ul>
+</nav>
+<div class="form">
+  <p th:text="${start}">
+  <p id="monthAndDayTime"></p>
+  <h1 id="currentTime"></h1>
+  <p th:text="${name}">
+  <div class="button-form">
+    <form th:action="@{/startWork}" method="post">
+      <button type="submit" class="start-b">出勤</button>
+    </form>
+    <form th:action="@{/endWork}" method="post">
+      <button type="submit" class="end-b">退勤</button>
+    </form>
+  </div>
+</div>
 <script type="text/javascript" th:src="@{/style/cssandjs/AttendanceInputForm.js}"></script>
 </body>
 </html>

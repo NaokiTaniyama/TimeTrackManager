@@ -6,22 +6,26 @@
     <title>勤務場所登録画面</title>
 </head>
 <body>
-<ul id="menu">
+<nav>
+<ul class="menu">
     <form th:action="@{/AttendanceInputFormNoParam}" method="post">
-        <li><button type="submit">勤怠入力</button></li>
+        <li><button type="submit"class="menu-b">勤怠入力</button></li>
     </form>
     <form th:action="@{/LocationInputForm}" method="post">
-        <li><button type="submit">勤務場所登録</button></li>
+        <li><button type="submit"class="menu-b">勤務場所登録</button></li>
     </form>
     <form th:action="@{/ContactInputForm}" method="post">
-        <li><button type="submit">連絡先登録</button></li>
+        <li><button type="submit"class="menu-b">連絡先登録</button></li>
     </form>
     <form th:action="@{/AttendanceStatusListView}" method="post">
-        <li><button type="submit">勤怠状況一覧表示</button></li>
+        <li><button type="submit"class="menu-b">勤怠状況一覧表示</button></li>
     </form>
-
+    <form th:action="@{/logout}" method="post">
+        <button type="submit" class="menu-b">ログアウト</button>
+    </form>
 </ul>
-<div>
+</nav>
+<div class="form">
     <h2>勤務場所登録画面</h2>
     <p>本日の勤務場所を登録してください</p>
     <select name="place">
@@ -30,7 +34,7 @@
         <option value="office">会社</option>
     </select>
     <form th:action="@{/AttendanceInputForm}" method="post">
-        <button type="submit">登録</button>
+        <button type="submit" class="register">登録</button>
     </form>
 </div>
 </body>
