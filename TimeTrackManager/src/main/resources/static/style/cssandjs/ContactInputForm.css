@@ -17,7 +17,11 @@ nav{
     padding:10px;
     color: #ffff;
     background-color:#696969;
-
 }
-
+.form{
+    position: relative;
+    text-align: center;
+    margin: 0;
+    padding: 100px;
+}
 

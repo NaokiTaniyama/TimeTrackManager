@@ -9,16 +9,19 @@
 <nav>
 <ul class="menu">
     <form th:action="@{/AttendanceInputFormNoParam}" method="post">
-        <li><button type="submit">勤怠入力</button></li>
+        <li><button type="submit"class="menu-b">勤怠入力</button></li>
     </form>
     <form th:action="@{/LocationInputForm}" method="post">
-        <li><button type="submit">勤務場所登録</button></li>
+        <li><button type="submit"class="menu-b">勤務場所登録</button></li>
     </form>
     <form th:action="@{/ContactInputForm}" method="post">
-        <li><button type="submit">連絡先登録</button></li>
+        <li><button type="submit"class="menu-b">連絡先登録</button></li>
     </form>
     <form th:action="@{/AttendanceStatusListView}" method="post">
-        <li><button type="submit">勤怠状況一覧表示</button></li>
+        <li><button type="submit"class="menu-b">勤怠状況一覧表示</button></li>
+    </form>
+    <form th:action="@{/logout}" method="post">
+        <button type="submit" class="menu-b">ログアウト</button>
     </form>
 </ul>
 </nav>
