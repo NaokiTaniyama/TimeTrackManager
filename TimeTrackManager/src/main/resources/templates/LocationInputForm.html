@@ -2,24 +2,40 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>勤怠入力画面</title>
+    <link th:href="@{/style/cssandjs/LocationInputForm.css}"rel="stylesheet">
+    <title>勤務場所登録画面</title>
 </head>
 <body>
-<ul>
-    <form th:action="@{/AttendanceInputForm}" method="post">
-        <li><button type="submit">勤怠入力</button></li>
+<nav>
+<ul class="menu">
+    <form th:action="@{/AttendanceInputFormNoParam}" method="post">
+        <li><button type="submit"class="menu-b">勤怠入力</button></li>
     </form>
     <form th:action="@{/LocationInputForm}" method="post">
-        <li><button type="submit">勤務場所登録</button></li>
+        <li><button type="submit"class="menu-b">勤務場所登録</button></li>
     </form>
     <form th:action="@{/ContactInputForm}" method="post">
-        <li><button type="submit">連絡先登録</button></li>
+        <li><button type="submit"class="menu-b">連絡先登録</button></li>
     </form>
     <form th:action="@{/AttendanceStatusListView}" method="post">
-        <li><button type="submit">勤怠状況一覧表示</button></li>
+        <li><button type="submit"class="menu-b">勤怠状況一覧表示</button></li>
     </form>
-
+    <form th:action="@{/logout}" method="post">
+        <button type="submit" class="menu-b">ログアウト</button>
+    </form>
 </ul>
-<p th:text="${index}">
+</nav>
+<div class="form">
+    <h2>勤務場所登録画面</h2>
+    <p>本日の勤務場所を登録してください</p>
+    <select name="place">
+        <option value="">-選択してください-</option>
+        <option value="home">自宅</option>
+        <option value="office">会社</option>
+    </select>
+    <form th:action="@{/AttendanceInputForm}" method="post">
+        <button type="submit" class="register">登録</button>
+    </form>
+</div>
 </body>
 </html>

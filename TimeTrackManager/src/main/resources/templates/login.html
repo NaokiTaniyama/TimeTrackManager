@@ -2,12 +2,20 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link th:href="@{/style/cssandjs/Login.css}" rel="stylesheet"/>
     <title>ログインページ</title>
 </head>
 <body>
-<p th:text="${name}">
-<form th:action="@{/AttendanceInputForm}" method="post">
-    <button type="submit">ログイン</button>
-</form>
+<div class="login-page">
+    <div class="form">
+        <p th:text="${index}">
+        <h2>Login</h2>
+        <form  th:action="@{/AttendanceInputForm}" method="post" class="login-form">
+            <input type="text" name="username" placeholder="username"/>
+            <input type="password" name="password" placeholder="password"/>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</div>
 </body>
 </html>
