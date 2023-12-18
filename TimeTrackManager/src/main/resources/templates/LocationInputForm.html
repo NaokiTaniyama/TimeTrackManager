@@ -28,12 +28,12 @@
 <div class="form">
     <h2>勤務場所登録画面</h2>
     <p>本日の勤務場所を登録してください</p>
-    <select name="place">
-        <option value="">-選択してください-</option>
-        <option value="home">自宅</option>
-        <option value="office">会社</option>
-    </select>
-    <form th:action="@{/AttendanceInputForm}" method="post">
+    <form th:action="@{/AttendanceInputForm/LocationUpdate}" method="post">
+        <select name="location">
+            <option value="">-選択してください-</option>
+            <option value="home">自宅</option>
+            <option value="office">会社</option>
+        </select>
         <button type="submit" class="register">登録</button>
     </form>
 </div>
