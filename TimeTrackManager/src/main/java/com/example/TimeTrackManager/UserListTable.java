@@ -12,6 +12,6 @@ public class UserListTable {
     private String location;
     private String phone_number;
     private String email_address;
-    private int work_status;
+    private String work_status;
 
 }

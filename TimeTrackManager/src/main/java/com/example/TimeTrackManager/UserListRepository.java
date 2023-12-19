@@ -35,7 +35,14 @@ public class UserListRepository {
             userListTable.setLocation((String)map.get("location"));
             userListTable.setPhone_number((String)map.get("phone_number"));
             userListTable.setEmail_address((String)map.get("email_address"));
-            userListTable.setWork_status((int)map.get("work_status"));
+            int workStatus = (int)map.get("work_status");
+            String workStatusStr;
+            if (workStatus == 0){
+                workStatusStr = "未出勤";
+            }else {
+                workStatusStr = "出勤中";
+            }
+            userListTable.setWork_status(workStatusStr);
             list.add(userListTable);
         }
         return list;

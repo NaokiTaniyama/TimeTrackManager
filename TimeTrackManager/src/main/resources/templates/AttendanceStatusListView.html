@@ -30,17 +30,17 @@
 <table border="1" class="status">
   <tr>
     <th>氏名</th>
-    <th>勤務開始時間</th>
-    <th>勤務終了時間</th>
-    <th>ステータス</th>
-    <th>勤務場所</th>
+    <th>電話番号</th>
+    <th>メールアドレス</th>
+    <th>勤務先</th>
+    <th>勤務状況</th>
   </tr>
   <tr th:each="view : ${view}">
     <td th:text="${view.username}"></td>
-    <td th:text="${view.checkin_time}"></td>
-    <td th:text="${view.checkout_time}"></td>
-    <td th:text="${view.work_status}"></td>
+    <td th:text="${view.phone_number}"></td>
+    <td th:text="${view.email_address}"></td>
     <td th:text="${view.location}"></td>
+    <td th:text="${view.work_status}"></td>
   </tr>
 </table>
 </div>

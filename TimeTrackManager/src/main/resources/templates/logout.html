@@ -2,15 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>ログインページ</title>
+  <link th:href="@{/style/cssandjs/Logout.css}" rel="stylesheet"/>
+  <title>ログアウト</title>
 </head>
 <body>
 <p>ログアウトしました</p>
 <form th:action="@{/login}" method="get">
-  <a href="" class="btn_06">Button</a>
-  <button type="submit">ログインページへ</button>
+  <button type="submit" class="btn_06">ログインページへ</button>
 </form>
-
-
 </body>
 </html>

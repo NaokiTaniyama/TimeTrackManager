@@ -81,7 +81,7 @@ public class MainController {
 
     @PostMapping("/AttendanceStatusListView")
     public String AttendanceView(Model model){
-        model.addAttribute("view", statusListViewRepository.findAll());
+        model.addAttribute("view", userListRepository.findAll());
         return "AttendanceStatusListView";
     }
 
@@ -117,5 +117,9 @@ public class MainController {
         return "AttendanceInputForm";
 
     }
+
+    @PostMapping("/ContactInputForm/ContactUpdate")
+    public String contactUpdate(Model model, @RequestParam("location") String location,
+                                @RequestParam("location") String location)
 
 }
