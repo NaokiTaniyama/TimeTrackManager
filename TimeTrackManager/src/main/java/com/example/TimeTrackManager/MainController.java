@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.awt.*;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Map;
 
 import static java.sql.Types.NULL;
@@ -27,6 +28,11 @@ public class MainController {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+    @Autowired
+    UserListRepository userListRepository;
+
+    @Autowired
+    StatusListViewRepository statusListViewRepository;
     @GetMapping("/login")
     public String index(Model model){
         model.addAttribute("name", "変数の受け渡し成功(リモートブランチテスト)");
@@ -75,7 +81,7 @@ public class MainController {
 
     @PostMapping("/AttendanceStatusListView")
     public String AttendanceView(Model model){
-        model.addAttribute("index", "勤怠状況一覧表示画面への遷移成功");
+        model.addAttribute("view", statusListViewRepository.findAll());
         return "AttendanceStatusListView";
     }
 

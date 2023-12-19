@@ -35,19 +35,12 @@
     <th>ステータス</th>
     <th>勤務場所</th>
   </tr>
-  <tr>
-    <td>名無し1</td>
-    <td>9:00</td>
-    <td>18:00</td>
-    <td>出勤中</td>
-    <td>自宅</td>
-  </tr>
-  <tr>
-    <td>名無し2</td>
-    <td>9:00</td>
-    <td>15:00</td>
-    <td>未出勤</td>
-    <td>---</td>
+  <tr th:each="view : ${view}">
+    <td th:text="${view.username}"></td>
+    <td th:text="${view.checkin_time}"></td>
+    <td th:text="${view.checkout_time}"></td>
+    <td th:text="${view.work_status}"></td>
+    <td th:text="${view.location}"></td>
   </tr>
 </table>
 </div>

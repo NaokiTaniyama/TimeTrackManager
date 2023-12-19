@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81c813a7-3e28-4354-81e6-837dfd4cfc54" name="変更" comment="追加出来ていないファイルがあったので、intellijから追加">
+      <change afterPath="$PROJECT_DIR$/TimeTrackManager/src/main/java/com/example/TimeTrackManager/StatusListViewRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TimeTrackManager/src/main/java/com/example/TimeTrackManager/StatusListViewTable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TimeTrackManager/src/main/java/com/example/TimeTrackManager/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TimeTrackManager/src/main/java/com/example/TimeTrackManager/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TimeTrackManager/src/main/java/com/example/TimeTrackManager/UserListRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/TimeTrackManager/src/main/java/com/example/TimeTrackManager/UserListRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TimeTrackManager/src/main/resources/static/style/cssandjs/AttendanceInputForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/TimeTrackManager/src/main/resources/static/style/cssandjs/AttendanceInputForm.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TimeTrackManager/src/main/resources/static/style/cssandjs/AttendanceStatusListView.css" beforeDir="false" afterPath="$PROJECT_DIR$/TimeTrackManager/src/main/resources/static/style/cssandjs/AttendanceStatusListView.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TimeTrackManager/src/main/resources/static/style/cssandjs/ContactInputForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/TimeTrackManager/src/main/resources/static/style/cssandjs/ContactInputForm.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TimeTrackManager/src/main/resources/static/style/cssandjs/LocationInputForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/TimeTrackManager/src/main/resources/static/style/cssandjs/LocationInputForm.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TimeTrackManager/src/main/resources/templates/AttendanceInputForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/TimeTrackManager/src/main/resources/templates/AttendanceInputForm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TimeTrackManager/src/main/resources/templates/LocationInputForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/TimeTrackManager/src/main/resources/templates/LocationInputForm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TimeTrackManager/src/main/resources/templates/AttendanceStatusListView.html" beforeDir="false" afterPath="$PROJECT_DIR$/TimeTrackManager/src/main/resources/templates/AttendanceStatusListView.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -57,7 +54,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/freed/OneDrive/デスクトップ/授業ノートまとめ三年生/システム開発/TimeTrackManager&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
   }
 }</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="アプリケーションレベル" UseSingleDictionary="true" transferred="true" />
