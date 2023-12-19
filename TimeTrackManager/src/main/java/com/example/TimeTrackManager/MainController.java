@@ -27,8 +27,6 @@ public class MainController {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-
-
     @GetMapping("/login")
     public String index(Model model){
         model.addAttribute("name", "変数の受け渡し成功(リモートブランチテスト)");
@@ -42,7 +40,6 @@ public class MainController {
     }
 
     @PostMapping("/AttendanceInputFormNoParam")
-    //後にログイン画面から値を受け取る処理を追加
     public String AttendanceFormNoParam(Model model) {
         String username = (String)session.getAttribute("username");
         String password = (String)session.getAttribute("password");
@@ -103,6 +100,15 @@ public class MainController {
             model.addAttribute("index", "ユーザー名かパスワードが間違っています");
             return "login";
         }
+    }
+
+    @PostMapping("/AttendanceInputForm/LocationUpdate")
+    public String locationUpdate(Model model, @RequestParam("location") String location){
+        int id = (int)session.getAttribute("id");
+        String sql = "UPDATE user_list SET location = '" + location + "' WHERE id = " + id;
+        jdbcTemplate.update(sql);
+        model.addAttribute("index", "出勤場所を登録しました");
+        return "AttendanceInputForm";
 
     }
 
