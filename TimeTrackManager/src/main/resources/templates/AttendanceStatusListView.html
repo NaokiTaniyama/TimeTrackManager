@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <link th:href="@{/style/cssandjs/AttendanceStatusListView.css}"rel="stylesheet">
+  <link th:href="@{/style/cssandjs/CSS/AttendanceStatusListView.css}"rel="stylesheet">
   <title>勤怠状況一覧画面</title>
 </head>
 <body>
@@ -21,7 +21,7 @@
     <li><button type="submit"class="menu-b">勤怠状況一覧</button></li>
   </form>
   <form th:action="@{/logout}" method="post">
-    <button type="submit" class="menu-b">ログアウト</button>
+    <button type="submit" class="menu-b" onclick="return logoutAnnounce()">ログアウト</button>
   </form>
 </ul>
 </nav>
@@ -44,5 +44,6 @@
   </tr>
 </table>
 </div>
+<script type="text/javascript" th:src="@{/style/cssandjs/JavaScript/AttendanceStatusListView.js}"></script>
 </body>
 </html>

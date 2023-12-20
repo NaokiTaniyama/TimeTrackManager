@@ -23,3 +23,27 @@ function showCurrentTime() {
 }
 showCurrentTime();
 setInterval(showCurrentTime, 1000);
+
+function startAnnounce() {
+    if(window.confirm('出勤します。よろしいでしょうか？')){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function endAnnounce() {
+    if(window.confirm('退勤します。よろしいでしょうか？')){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function logoutAnnounce() {
+    if(window.confirm('ログアウトします。よろしいでしょうか？')){
+        return true;
+    }else{
+        return false;
+    }
+}

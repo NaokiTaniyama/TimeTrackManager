@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
   <meta charset="UTF-8">
-  <link th:href="@{/style/cssandjs/AttendanceInputForm.css}" rel="stylesheet">
+  <link th:href="@{/style/cssandjs/CSS/AttendanceInputForm.css}" rel="stylesheet">
   <title>勤怠入力画面</title>
 </head>
 <body>
@@ -21,7 +21,7 @@
       <li><button type="submit"class="menu-b">勤怠状況一覧</button></li>
     </form>
     <form th:action="@{/logout}" method="post">
-      <button type="submit" class="menu-b">ログアウト</button>
+      <button type="submit" class="menu-b" onclick="return logoutAnnounce()">ログアウト</button>
     </form>
   </ul>
 </nav>
@@ -35,12 +35,12 @@
     <tr>
       <td>
         <form th:action="@{/startWork}" method="post">
-          <button type="submit" class="start-b">出勤</button>
+          <button type="submit" class="start-b" onclick="return startAnnounce()">出勤</button>
         </form>
       </td>
       <td>
         <form th:action="@{/endWork}" method="post">
-          <button type="submit" class="end-b">退勤</button>
+          <button type="submit" class="end-b" onclick="return endAnnounce()">退勤</button>
         </form>
       </td>
     </tr>
@@ -54,6 +54,6 @@
     </tr>
   </table>
 </div>
-<script type="text/javascript" th:src="@{/style/cssandjs/AttendanceInputForm.js}"></script>
+<script type="text/javascript" th:src="@{/style/cssandjs/JavaScript/AttendanceInputForm.js}"></script>
 </body>
 </html>
