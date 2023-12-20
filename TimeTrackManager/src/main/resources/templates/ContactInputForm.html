@@ -27,24 +27,11 @@
 </nav>
 <div class="form">
 <h1>連絡先登録</h1>
-<form class="input-from">
-    <p>電話番号<input type="tel" placeholder="000-0000-0000"/></p>
-    <p>メールアドレス<input type="email" placeholder="**********@*****"/></p>
-    <p>備考<input type="text" size="30" placeholder="備考を入力してください"/></p>
-</form>
-    <form th:action="@{/AttendanceInputForm}" method="post">
+    <form th:action="@{/ContactInputForm/ContactUpdate}" method="post">
+        <p>電話番号<input type="tel" placeholder="000-0000-0000" name="phone_number"/></p>
+        <p>メールアドレス<input type="email" placeholder="**********@*****" name="email_address"/></p>
         <button type="submit" class="register">登録</button>
     </form>
 </div>
 </body>
 </html>
-
-
-<div>
-    <label for="i_furigana">住所</label>
-    <input id="i_furigana" type="text" name="furigana" value="" placeholder="大阪府大阪市中央区1-1-1">
-</div>
-<div>
-    <label for="i_tel">電話番号</label>
-    <input id="i_tel" type="tel" name="tel" value="" inputmode="tel" placeholder="080-1234-5678">
-</div>

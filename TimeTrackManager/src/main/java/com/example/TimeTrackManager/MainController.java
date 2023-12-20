@@ -119,7 +119,13 @@ public class MainController {
     }
 
     @PostMapping("/ContactInputForm/ContactUpdate")
-    public String contactUpdate(Model model, @RequestParam("location") String location,
-                                @RequestParam("location") String location)
+    public String contactUpdate(Model model, @RequestParam("phone_number") String phone_number,
+                                @RequestParam("email_address") String email_address){
+        int id = (int)session.getAttribute("id");
+        String sql = "UPDATE user_list SET phone_number = '" + phone_number + "', email_address = '" + email_address + "' WHERE id = " + id;
+        jdbcTemplate.update(sql);
+        model.addAttribute("index", "連絡先を登録しました");
+        return "AttendanceInputForm";
+    }
 
 }

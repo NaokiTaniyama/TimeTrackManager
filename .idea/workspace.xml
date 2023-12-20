@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81c813a7-3e28-4354-81e6-837dfd4cfc54" name="変更" comment="追加出来ていないファイルがあったので、intellijから追加">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TimeTrackManager/src/main/java/com/example/TimeTrackManager/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TimeTrackManager/src/main/java/com/example/TimeTrackManager/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TimeTrackManager/src/main/java/com/example/TimeTrackManager/UserListRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/TimeTrackManager/src/main/java/com/example/TimeTrackManager/UserListRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TimeTrackManager/src/main/java/com/example/TimeTrackManager/UserListTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/TimeTrackManager/src/main/java/com/example/TimeTrackManager/UserListTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TimeTrackManager/src/main/resources/static/style/cssandjs/Logout.css" beforeDir="false" afterPath="$PROJECT_DIR$/TimeTrackManager/src/main/resources/static/style/cssandjs/Logout.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TimeTrackManager/src/main/resources/templates/AttendanceStatusListView.html" beforeDir="false" afterPath="$PROJECT_DIR$/TimeTrackManager/src/main/resources/templates/AttendanceStatusListView.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TimeTrackManager/src/main/resources/templates/logout.html" beforeDir="false" afterPath="$PROJECT_DIR$/TimeTrackManager/src/main/resources/templates/logout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TimeTrackManager/src/main/resources/templates/ContactInputForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/TimeTrackManager/src/main/resources/templates/ContactInputForm.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
