@@ -1,5 +1,6 @@
-package com.example.TimeTrackManager;
+package com.example.TimeTrackManager.Repository;
 
+import com.example.TimeTrackManager.Table.AttendanceListTable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 

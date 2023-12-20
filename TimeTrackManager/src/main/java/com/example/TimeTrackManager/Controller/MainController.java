@@ -1,8 +1,9 @@
-package com.example.TimeTrackManager;
+package com.example.TimeTrackManager.Controller;
 
+import com.example.TimeTrackManager.Repository.StatusListViewRepository;
+import com.example.TimeTrackManager.Repository.UserListRepository;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
@@ -11,9 +12,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.awt.*;
-import java.sql.SQLException;
-import java.util.List;
 import java.util.Map;
 
 import static java.sql.Types.NULL;

@@ -1,4 +1,4 @@
-package com.example.TimeTrackManager;
+package com.example.TimeTrackManager.Table;
 
 import lombok.Getter;
 import lombok.Setter;
