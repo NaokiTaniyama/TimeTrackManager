@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <link th:href="@{/style/cssandjs/AttendanceStatusListView.css}"rel="stylesheet">
+  <link th:href="@{/style/cssandjs/CSS/AttendanceStatusListView.css}"rel="stylesheet">
   <title>勤怠状況一覧画面</title>
 </head>
 <body>
@@ -21,7 +21,7 @@
     <li><button type="submit"class="menu-b">勤怠状況一覧</button></li>
   </form>
   <form th:action="@{/logout}" method="post">
-    <button type="submit" class="menu-b">ログアウト</button>
+    <button type="submit" class="menu-b" onclick="return logoutAnnounce()">ログアウト</button>
   </form>
 </ul>
 </nav>
@@ -30,26 +30,20 @@
 <table border="1" class="status">
   <tr>
     <th>氏名</th>
-    <th>勤務開始時間</th>
-    <th>勤務終了時間</th>
-    <th>ステータス</th>
-    <th>勤務場所</th>
+    <th>電話番号</th>
+    <th>メールアドレス</th>
+    <th>勤務先</th>
+    <th>勤務状況</th>
   </tr>
-  <tr>
-    <td>名無し1</td>
-    <td>9:00</td>
-    <td>18:00</td>
-    <td>出勤中</td>
-    <td>自宅</td>
-  </tr>
-  <tr>
-    <td>名無し2</td>
-    <td>9:00</td>
-    <td>15:00</td>
-    <td>未出勤</td>
-    <td>---</td>
+  <tr th:each="view : ${view}">
+    <td th:text="${view.username}"></td>
+    <td th:text="${view.phone_number}"></td>
+    <td th:text="${view.email_address}"></td>
+    <td th:text="${view.location}"></td>
+    <td th:text="${view.work_status}"></td>
   </tr>
 </table>
 </div>
+<script type="text/javascript" th:src="@{/style/cssandjs/JavaScript/AttendanceStatusListView.js}"></script>
 </body>
 </html>

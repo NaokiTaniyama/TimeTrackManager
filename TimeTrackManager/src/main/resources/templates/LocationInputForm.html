@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link th:href="@{/style/cssandjs/LocationInputForm.css}"rel="stylesheet">
+    <link th:href="@{/style/cssandjs/CSS/LocationInputForm.css}"rel="stylesheet">
     <title>勤務場所登録画面</title>
 </head>
 <body>
@@ -20,7 +20,7 @@
     <form th:action="@{/AttendanceStatusListView}" method="post">
         <li><button type="submit"class="menu-b">勤怠状況一覧表示</button></li>
     </form>
-    <form th:action="@{/logout}" method="post">
+    <form th:action="@{/logout}" method="post" onclick="return logoutAnnounce()">
         <button type="submit" class="menu-b">ログアウト</button>
     </form>
 </ul>
@@ -37,5 +37,6 @@
         <button type="submit" class="register">登録</button>
     </form>
 </div>
+<script type="text/javascript" th:src="@{/style/cssandjs/JavaScript/LocationInputForm.js}"></script>
 </body>
 </html>

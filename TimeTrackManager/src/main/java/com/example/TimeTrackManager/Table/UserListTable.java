@@ -1,4 +1,4 @@
-package com.example.TimeTrackManager;
+package com.example.TimeTrackManager.Table;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -12,6 +12,6 @@ public class UserListTable {
     private String location;
     private String phone_number;
     private String email_address;
-    private int work_status;
+    private String work_status;
 
 }

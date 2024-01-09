@@ -1,8 +1,9 @@
-package com.example.TimeTrackManager;
+package com.example.TimeTrackManager.Controller;
 
+import com.example.TimeTrackManager.Repository.StatusListViewRepository;
+import com.example.TimeTrackManager.Repository.UserListRepository;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
@@ -11,8 +12,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.awt.*;
-import java.sql.SQLException;
 import java.util.Map;
 
 import static java.sql.Types.NULL;
@@ -27,6 +26,11 @@ public class MainController {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+    @Autowired
+    UserListRepository userListRepository;
+
+    @Autowired
+    StatusListViewRepository statusListViewRepository;
     @GetMapping("/login")
     public String index(Model model){
         model.addAttribute("name", "変数の受け渡し成功(リモートブランチテスト)");
@@ -75,7 +79,7 @@ public class MainController {
 
     @PostMapping("/AttendanceStatusListView")
     public String AttendanceView(Model model){
-        model.addAttribute("index", "勤怠状況一覧表示画面への遷移成功");
+        model.addAttribute("view", userListRepository.findAll());
         return "AttendanceStatusListView";
     }
 
@@ -110,6 +114,16 @@ public class MainController {
         model.addAttribute("index", "出勤場所を登録しました");
         return "AttendanceInputForm";
 
+    }
+
+    @PostMapping("/ContactInputForm/ContactUpdate")
+    public String contactUpdate(Model model, @RequestParam("phone_number") String phone_number,
+                                @RequestParam("email_address") String email_address){
+        int id = (int)session.getAttribute("id");
+        String sql = "UPDATE user_list SET phone_number = '" + phone_number + "', email_address = '" + email_address + "' WHERE id = " + id;
+        jdbcTemplate.update(sql);
+        model.addAttribute("index", "連絡先を登録しました");
+        return "AttendanceInputForm";
     }
 
 }

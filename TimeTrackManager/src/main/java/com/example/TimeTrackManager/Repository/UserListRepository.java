@@ -1,9 +1,11 @@
-package com.example.TimeTrackManager;
+package com.example.TimeTrackManager.Repository;
 
+import com.example.TimeTrackManager.Table.UserListTable;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +14,7 @@ import java.util.Map;
 import static java.sql.Types.NULL;
 import static javax.swing.UIManager.get;
 
+@Repository
 public class UserListRepository {
 
     @Autowired
@@ -33,7 +36,14 @@ public class UserListRepository {
             userListTable.setLocation((String)map.get("location"));
             userListTable.setPhone_number((String)map.get("phone_number"));
             userListTable.setEmail_address((String)map.get("email_address"));
-            userListTable.setWork_status((int)map.get("work_status"));
+            int workStatus = (int)map.get("work_status");
+            String workStatusStr;
+            if (workStatus == 0){
+                workStatusStr = "未出勤";
+            }else {
+                workStatusStr = "出勤中";
+            }
+            userListTable.setWork_status(workStatusStr);
             list.add(userListTable);
         }
         return list;
