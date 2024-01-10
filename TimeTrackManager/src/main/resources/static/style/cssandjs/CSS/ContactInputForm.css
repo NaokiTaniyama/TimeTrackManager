@@ -23,4 +23,12 @@ nav{
     margin: 0;
     padding: 100px;
 }
+.register{
+    width: 100px;
+    padding: 20px;
+    text-align: center;
+    background-color:forestgreen;
+    border:none;
+    border-radius: 10px;
+}
 

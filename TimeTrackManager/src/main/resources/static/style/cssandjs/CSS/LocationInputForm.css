@@ -27,6 +27,7 @@ nav{
     width: 100px;
     padding: 20px;
     text-align: center;
-    background-color:chartreuse;
+    background-color:forestgreen;
     border:none;
+    border-radius: 10px;
 }
