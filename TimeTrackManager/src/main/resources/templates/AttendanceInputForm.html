@@ -46,10 +46,14 @@
     </tr>
     <tr>
       <td>
-        <button type="submit" class="pause">休憩開始</button>
+        <form th:action="@{/startBreak}" method="post">
+          <button type="submit" class="pause">休憩開始</button>
+        </form>
       </td>
       <td>
-        <button type="submit" class="pause">休憩終了</button>
+        <form th:action="@{/endBreak}" method="post">
+          <button type="submit" class="pause">休憩終了</button>
+        </form>
       </td>
     </tr>
   </table>
