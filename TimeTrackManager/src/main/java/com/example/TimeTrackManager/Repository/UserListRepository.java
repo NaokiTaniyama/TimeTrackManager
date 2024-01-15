@@ -37,10 +37,13 @@ public class UserListRepository {
             userListTable.setPhone_number((String)map.get("phone_number"));
             userListTable.setEmail_address((String)map.get("email_address"));
             int workStatus = (int)map.get("work_status");
+            int breakStatus = (int)map.get("break_status");
             String workStatusStr;
             if (workStatus == 0){
                 workStatusStr = "未出勤";
-            }else {
+            }else if (breakStatus != 0){
+                workStatusStr = "休憩中";
+            }else{
                 workStatusStr = "出勤中";
             }
             userListTable.setWork_status(workStatusStr);

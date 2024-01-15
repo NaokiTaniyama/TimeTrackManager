@@ -32,12 +32,18 @@ public class StatusListViewRepository {
             statusListViewTable.setCheckout_time(sdf.format(checkOutTime));
             statusListViewTable.setLocation((String)map.get("location"));
             int workStatus = (int)map.get("work_status");
+            int breakStatus = (int)map.get("break_status");
             String workStatusStr;
             if (workStatus == 0){
                 workStatusStr = "未出勤";
-            }else {
+            }else if (breakStatus != 0){
+                workStatusStr = "休憩中";
+            }else{
                 workStatusStr = "出勤中";
             }
+
+            System.out.println(breakStatus);
+
             statusListViewTable.setWork_status(workStatusStr);
             list.add(statusListViewTable);
         }

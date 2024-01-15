@@ -36,7 +36,7 @@ public class SqlController {
             jdbcTemplate.update("UPDATE user_list SET work_status = " + list_id + " WHERE id = " + user_id);
             model.addAttribute("start", "出勤中。＊無理はせずに、適度に休憩してください");
         }else if (break_status != 0){
-            model.addAttribute("start", "現在休憩中です。まずは、「休憩終了」ボタンを押してください");
+            model.addAttribute("start", "すでに休憩中です。まずは、「休憩終了」ボタンを押してください");
         }else{
             model.addAttribute("start", "すでに出勤しています。退勤するには、「退勤」ボタンを押してください");
         }

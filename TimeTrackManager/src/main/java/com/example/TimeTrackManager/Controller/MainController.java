@@ -33,14 +33,13 @@ public class MainController {
     StatusListViewRepository statusListViewRepository;
     @GetMapping("/login")
     public String index(Model model){
-        model.addAttribute("name", "変数の受け渡し成功(リモートブランチテスト)");
         return "login";
     }
 
     @PostMapping("/logout")
     public String logout(Model model){
         session.invalidate();
-        return "logout";
+        return "login";
     }
 
     @PostMapping("/AttendanceInputFormNoParam")
