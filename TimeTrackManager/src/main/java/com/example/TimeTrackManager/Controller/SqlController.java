@@ -1,5 +1,7 @@
 package com.example.TimeTrackManager.Controller;
 
+import com.example.TimeTrackManager.Repository.UserListRepository;
+import com.example.TimeTrackManager.Table.UserListTable;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -18,6 +20,9 @@ public class SqlController {
     @Autowired
     HttpSession session;
 
+    @Autowired
+    UserListRepository userListRepository;
+
     @PostMapping("/startWork")
     public String startWork(Model model){
         int user_id = (int)session.getAttribute("id");
@@ -34,12 +39,15 @@ public class SqlController {
             int list_id = (int)attendance.get("list_id");
             //どのattendance_listに対応しているかを保存
             jdbcTemplate.update("UPDATE user_list SET work_status = " + list_id + " WHERE id = " + user_id);
-            model.addAttribute("start", "出勤中。＊無理はせずに、適度に休憩してください");
+            model.addAttribute("start", "＊無理はせずに、適度に休憩してください");
         }else if (break_status != 0){
-            model.addAttribute("start", "すでに休憩中です。まずは、「休憩終了」ボタンを押してください");
+            model.addAttribute("start", "すでに休憩中です。休憩を終了するには、「休憩終了」ボタンを押してください");
         }else{
             model.addAttribute("start", "すでに出勤しています。退勤するには、「退勤」ボタンを押してください");
         }
+        UserListTable userListTable = userListRepository.findById();
+        String workStatus = userListTable.getWork_status();
+        model.addAttribute("status", workStatus);
         return "AttendanceInputForm";
     }
 
@@ -56,10 +64,13 @@ public class SqlController {
             jdbcTemplate.update("UPDATE user_list SET work_status = 0 WHERE id = " + user_id);
             model.addAttribute("start", "退勤済み。お疲れさまでした！");
         }else if (break_status != 0){
-            model.addAttribute("start", "すでに休憩中です。まずは、「休憩終了」ボタンを押してください");
+            model.addAttribute("start", "すでに休憩中です。休憩を終了するには、「休憩終了」ボタンを押してください");
         }else{
             model.addAttribute("start", "まずは出勤してください");
         }
+        UserListTable userListTable = userListRepository.findById();
+        String workStatus = userListTable.getWork_status();
+        model.addAttribute("status", workStatus);
         return "AttendanceInputForm";
     }
 
@@ -73,12 +84,15 @@ public class SqlController {
             String attendanceSql = "UPDATE attendance_list SET start_break_time = CURRENT_TIMESTAMP WHERE list_id = " + work_status;
             jdbcTemplate.update(attendanceSql);
             jdbcTemplate.update("UPDATE user_list SET break_status = 1 WHERE id = " + user_id);
-            model.addAttribute("start", "休憩中");
+            //model.addAttribute("start", "休憩中");
         }else if (break_status != 0){
             model.addAttribute("start", "すでに休憩中です");
         }else {
             model.addAttribute("start", "この機能は、出勤状態でのみ使用できます");
         }
+        UserListTable userListTable = userListRepository.findById();
+        String workStatus = userListTable.getWork_status();
+        model.addAttribute("status", workStatus);
         return "AttendanceInputForm";
     }
 
@@ -92,12 +106,15 @@ public class SqlController {
             String attendanceSql = "UPDATE attendance_list SET end_break_time = CURRENT_TIMESTAMP WHERE list_id = " + work_status;
             jdbcTemplate.update(attendanceSql);
             jdbcTemplate.update("UPDATE user_list SET break_status = 0 WHERE id = " + user_id);
-            model.addAttribute("start", "出勤中。＊無理をせず、適度に休憩してください");
+            model.addAttribute("start", "*無理をせず、適度に休憩してください");
         }else if (break_status == 0){
             model.addAttribute("start", "先に「休憩開始」ボタンを押してください");
         }else {
             model.addAttribute("start", "この機能は、出勤状態でのみ使用できます");
         }
+        UserListTable userListTable = userListRepository.findById();
+        String workStatus = userListTable.getWork_status();
+        model.addAttribute("status", workStatus);
         return "AttendanceInputForm";
     }
 }

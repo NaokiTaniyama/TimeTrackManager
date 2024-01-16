@@ -2,6 +2,7 @@ package com.example.TimeTrackManager.Controller;
 
 import com.example.TimeTrackManager.Repository.StatusListViewRepository;
 import com.example.TimeTrackManager.Repository.UserListRepository;
+import com.example.TimeTrackManager.Table.UserListTable;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
@@ -52,7 +53,9 @@ public class MainController {
 
             int id = (int)result.get("id");
             if (id != NULL){
-                model.addAttribute("name", "こんにちは、" +  username + "さん。");
+                UserListTable userListTable = userListRepository.findById();
+                String workStatus = userListTable.getWork_status();
+                model.addAttribute("status", workStatus);
                 return "AttendanceInputForm";
             }else {
                 throw new IncorrectResultSizeDataAccessException(0);
@@ -66,13 +69,11 @@ public class MainController {
 
     @PostMapping("/LocationInputForm")
     public String LocationForm(Model model){
-        model.addAttribute("index", "勤務場所登録画面への遷移成功");
         return "LocationInputForm";
     }
 
     @PostMapping("/ContactInputForm")
     public String ContactForm(Model model){
-        model.addAttribute("index", "連絡先登録画面への遷移成功");
         return "ContactInputForm";
     }
 
@@ -95,6 +96,9 @@ public class MainController {
                 session.setAttribute("username",username);
                 session.setAttribute("password",password);
                 session.setAttribute("id",id);
+                UserListTable userListTable = userListRepository.findById();
+                String workStatus = userListTable.getWork_status();
+                model.addAttribute("status", workStatus);
                 return "AttendanceInputForm";
             }else {
                 throw new IncorrectResultSizeDataAccessException(0);
@@ -108,9 +112,13 @@ public class MainController {
     @PostMapping("/AttendanceInputForm/LocationUpdate")
     public String locationUpdate(Model model, @RequestParam("location") String location){
         int id = (int)session.getAttribute("id");
-        String sql = "UPDATE user_list SET location = '" + location + "' WHERE id = " + id;
+        String locationStr = userListRepository.locationTranceJP(location);
+        String sql = "UPDATE user_list SET location = '" + locationStr + "' WHERE id = " + id;
         jdbcTemplate.update(sql);
         model.addAttribute("index", "出勤場所を登録しました");
+        UserListTable userListTable = userListRepository.findById();
+        String workStatus = userListTable.getWork_status();
+        model.addAttribute("status", workStatus);
         return "AttendanceInputForm";
 
     }
@@ -121,6 +129,9 @@ public class MainController {
         int id = (int)session.getAttribute("id");
         String sql = "UPDATE user_list SET phone_number = '" + phone_number + "', email_address = '" + email_address + "' WHERE id = " + id;
         jdbcTemplate.update(sql);
+        UserListTable userListTable = userListRepository.findById();
+        String workStatus = userListTable.getWork_status();
+        model.addAttribute("status", workStatus);
         model.addAttribute("index", "連絡先を登録しました");
         return "AttendanceInputForm";
     }

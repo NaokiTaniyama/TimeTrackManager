@@ -18,7 +18,7 @@
         <li><button type="submit"class="menu-b">連絡先登録</button></li>
     </form>
     <form th:action="@{/AttendanceStatusListView}" method="post">
-        <li><button type="submit"class="menu-b">勤怠状況一覧表示</button></li>
+        <li><button type="submit"class="menu-b">勤怠状況一覧</button></li>
     </form>
     <form th:action="@{/logout}" method="post" onclick="return logoutAnnounce()">
         <button type="submit" class="menu-b">ログアウト</button>
@@ -28,8 +28,12 @@
 <div class="form">
 <h1>連絡先登録</h1>
     <form th:action="@{/ContactInputForm/ContactUpdate}" method="post">
-        <p>電話番号<input type="tel" placeholder="000-0000-0000" name="phone_number"/></p>
-        <p>メールアドレス<input type="email" placeholder="**********@*****" name="email_address"/></p>
+        <p>電話番号(ハイフンなし)<input type="tel" name="phone_number" placeholder="11122223333"
+                          pattern="\d{2,4}-?\d{2,4}-?\d{3,4}"
+                          maxlength="11"
+                          required /></p>
+        <p>メールアドレス<input type="email" placeholder="**********@*****" name="email_address" required/></p>
+
         <button type="submit" class="register">登録</button>
     </form>
 </div>
