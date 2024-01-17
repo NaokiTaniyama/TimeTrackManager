@@ -40,6 +40,22 @@ function endAnnounce() {
     }
 }
 
+function breakStartAnnounce() {
+    if(window.confirm('休憩を開始します。よろしいでしょうか？')){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function breakEndAnnounce() {
+    if(window.confirm('休憩を終了します。よろしいでしょうか？')){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 function logoutAnnounce() {
     if(window.confirm('ログアウトします。よろしいでしょうか？')){
         return true;

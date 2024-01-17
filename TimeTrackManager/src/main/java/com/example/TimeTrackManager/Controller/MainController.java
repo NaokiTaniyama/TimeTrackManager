@@ -79,7 +79,7 @@ public class MainController {
 
     @PostMapping("/AttendanceStatusListView")
     public String AttendanceView(Model model){
-        model.addAttribute("view", userListRepository.findAll());
+        model.addAttribute("view", userListRepository.findByDepartment());
         return "AttendanceStatusListView";
     }
 
@@ -87,15 +87,17 @@ public class MainController {
     public String AttendanceForm(Model model, @RequestParam("username") String username,
                                  @RequestParam("password") String password) {
         try{
-            String sql = "SELECT id FROM user_list WHERE username = '" + username + "' AND password = '" + password + "'";
+            String sql = "SELECT * FROM user_list WHERE username = '" + username + "' AND password = '" + password + "'";
             Map<String, Object> result = jdbcTemplate.queryForMap(sql);
 
             int id = (int)result.get("id");
             if (id != NULL){
+                String department = (String)result.get("department");
                 model.addAttribute("name", "こんにちは、" +  username + "さん。");
                 session.setAttribute("username",username);
                 session.setAttribute("password",password);
                 session.setAttribute("id",id);
+                session.setAttribute("department",department);
                 UserListTable userListTable = userListRepository.findById();
                 String workStatus = userListTable.getWork_status();
                 model.addAttribute("status", workStatus);

@@ -28,11 +28,11 @@
 <div class="form">
 <h1>連絡先登録</h1>
     <form th:action="@{/ContactInputForm/ContactUpdate}" method="post">
-        <p>電話番号(ハイフンなし)<input type="tel" name="phone_number" placeholder="11122223333"
-                          pattern="\d{2,4}-?\d{2,4}-?\d{3,4}"
-                          maxlength="11"
+        <p>電話番号<input type="tel" name="phone_number" placeholder="例:***-****-****"
+                          pattern="\d{2,4}-\d{2,4}-\d{3,4}"
+                          maxlength="13"
                           required /></p>
-        <p>メールアドレス<input type="email" placeholder="**********@*****" name="email_address" required/></p>
+        <p>メールアドレス<input type="email" placeholder="例:**********@*****.***" name="email_address" required/></p>
 
         <button type="submit" class="register">登録</button>
     </form>
